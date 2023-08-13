@@ -4,64 +4,65 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Ionicons from "@expo/vector-icons/Ionicons";
 
 // Screens
-import HomeScreen from "./components/HomeScreen";
-import SignpostScreen from "./components/SignpostScreen";
-import FavouritesScreen from "./components/FavouritesScreen";
-import AboutScreen from "./components/AboutScreen";
-
-//Screen names
-const homeName = "Home";
-const signpostName = "Signpost";
-const favouritesName = "Favourites";
-const aboutName = "About";
+import HomeScreen from "./screens/HomeScreen";
+import SignpostScreen from "./screens/SignpostScreen";
+import FavouritesScreen from "./screens/FavouritesScreen";
+import AboutScreen from "./screens/AboutScreen";
 
 const Stack = createBottomTabNavigator();
 
 const App = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator
-        initialRouteName={homeName}
-        screenOptions={({ route }) => (
-          {
+      <Stack.Navigator initialRouteName="Home">
+        <Stack.Screen
+          name="Home"
+          component={HomeScreen}
+          options={{
+            tabBarLabel: "Home",
             tabBarIcon: ({ focused, color, size }) => {
               let iconName;
-              let rn = route.name;
-
-              if (rn === homeName) {
-                iconName = focused ? 'home' : 'home-outline';
-              } else if (rn === signpostName) {
-                iconName = focused ? "list" : "list-outline";
-              } else if (rn === favouritesName) {
-                iconName = focused ? "bookmark" : "bookmark-outline";
-              } else if (rn === aboutName) {
-                iconName = focused ? "help-circle" : "help-circle-outline";
-              }
-
-              // You can return any component that you like here!
-              return <Ionicons name={iconName} size={size} color={color} />;
+              iconName = focused ? "home" : "home-outline";
+              return <Ionicons name={iconName} color={color} size={size} />;
             },
-          },
-          {
-            tabBarActiveTintColor: "tomato",
-            tabBarInactiveTintColor: "grey",
-            tabBarLabelStyle: {
-              paddingBottom: 10,
-              fontSize: 10,
+          }}
+        />
+        <Stack.Screen
+          name="Signpost"
+          component={SignpostScreen}
+          options={{
+            tabBarLabel: "Signpost",
+            tabBarIcon: ({ focused, color, size }) => {
+              let iconName;
+              iconName = focused ? "list" : "list-outline";
+              return <Ionicons name={iconName} color={color} size={size} />;
             },
-            tabBarStyle: [
-              {
-                display: "flex",
-              },
-              null,
-            ],
-          }
-        )}
-      >
-        <Stack.Screen name="Home" component={HomeScreen} />
-        <Stack.Screen name="Signpost" component={SignpostScreen} />
-        <Stack.Screen name="Favourites" component={FavouritesScreen} />
-        <Stack.Screen name="About" component={AboutScreen} />
+          }}
+        />
+        <Stack.Screen
+          name="Favourites"
+          component={FavouritesScreen}
+          options={{
+            tabBarLabel: "Favourites",
+            tabBarIcon: ({ focused, color, size }) => {
+              let iconName;
+              iconName = focused ? "bookmark" : "bookmark-outline";
+              return <Ionicons name={iconName} color={color} size={size} />;
+            },
+          }}
+        />
+        <Stack.Screen
+          name="About"
+          component={AboutScreen}
+          options={{
+            tabBarLabel: "About",
+            tabBarIcon: ({ focused, color, size }) => {
+              let iconName;
+              iconName = focused ? "help-circle" : "help-circle-outline";
+              return <Ionicons name={iconName} color={color} size={size} />;
+            },
+          }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
