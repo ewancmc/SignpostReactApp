@@ -2,8 +2,9 @@ import * as React from 'react';
 import { View, Text } from 'react-native';
 import SignpostList from '../components/SignpostList'
 
-export default function SignpostScreen({ navigation }) {
+const SignpostScreen = props => {
   return (
-    <SignpostList/>
+    <SignpostList navigation = {props.navigation}/>
   );
 }
+export default SignpostScreen

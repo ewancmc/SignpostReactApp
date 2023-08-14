@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { View, Text, FlatList, TouchableOpacity } from "react-native";
-import SignpostDetails from "./SignpostDetails";
+import Signpost from "./Signpost";
 import SignpostData from "../data/signpost_data.json";
 
-const SignpostList = () => {
+const SignpostList = (props) => {
   //const [isLoading, setLoading] = useState(false);
   //const [signposts, setSignposts] = useState([]);
   //
@@ -25,7 +25,19 @@ const SignpostList = () => {
       <FlatList
         data={SignpostData}
         keyExtractor={({ id }) => id.toString()}
-        renderItem={({ item }) => <Text>{item.title} </Text>}
+        renderItem={({ item }) => (
+          <TouchableOpacity
+            onPress={() =>
+              props.navigation.navigate("SignpostDetails", {
+                id: item.id,
+              })
+            }
+          >
+            <View>
+              <Signpost signpost={item} />
+            </View>
+          </TouchableOpacity>
+        )}
       />
     </View>
   );
