@@ -1,6 +1,6 @@
 [
     {
-        "id": "1",
+        "id": "01",
         "title": "Exchanging ideas too early and too often hinders their diversity and potential to innovate",
         "image": "image file here",
         "body_text": {
@@ -11,7 +11,7 @@
         "callibration" : 0 
     },
     {
-        "id": "2",
+        "id": "02",
         "title": "The workplace should promote absurdity", 
         "image": "image file here",
         "body_text": {
@@ -22,7 +22,7 @@
         "callibration" : 0 
     },
     {
-        "id": "3",
+        "id": "03",
         "title": "The workplace should nurture our human traits", 
         "image": "image file here",
         "body_text": {
@@ -33,7 +33,7 @@
         "callibration" : 0 
     },
     {
-        "id": "4",
+        "id": "04",
         "title": "Adversities are worth keeping, even introduced, in the workplace to promote innovation", 
         "image": "image file here",
         "body_text": {
@@ -44,7 +44,7 @@
         "callibration" : 0 
     },
     {
-        "id": "5",
+        "id": "05",
         "title": "Aloneness needs to be within the ideal conditions of its effects on us (solitude) and the quality of the idea itself", 
         "image": "image file here",
         "body_text": {

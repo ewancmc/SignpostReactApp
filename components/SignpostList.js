@@ -1,25 +1,9 @@
-import React, { useEffect, useState } from "react";
-import { View, Text, FlatList, TouchableOpacity } from "react-native";
-import Signpost from "./Signpost";
+import { View, FlatList, TouchableOpacity } from "react-native";
+import SignpostCard from "./SignpostCard";
 import SignpostData from "../data/signpost_data.json";
 
-const SignpostList = (props) => {
-  //const [isLoading, setLoading] = useState(false);
-  //const [signposts, setSignposts] = useState([]);
-  //
-  //getSignposts = () => {
-  //  fetch("../data/signpost_data.json")
-  //    .then((response) => response.json())
-  //    .then((json) => setSignposts(json))
-  //    .catch((error) => console.error(error))
-  //    .finally(() => setLoading(false));
-  //};
-  //
-  //useEffect(() => {
-  //  setLoading(true);
-  //  getSignposts();
-  //}, []);
-
+const SignpostList = ({ navigation }) => {
+  console.log(Object(SignpostData[0]['body_text']))
   return (
     <View>
       <FlatList
@@ -28,13 +12,13 @@ const SignpostList = (props) => {
         renderItem={({ item }) => (
           <TouchableOpacity
             onPress={() =>
-              props.navigation.navigate("SignpostDetails", {
-                id: item.id,
+              navigation.navigate("SignpostDetails", {
+                item: item,
               })
             }
           >
             <View>
-              <Signpost signpost={item} />
+              <SignpostCard signpost={item} />
             </View>
           </TouchableOpacity>
         )}
