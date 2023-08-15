@@ -2,16 +2,15 @@ import * as React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Ionicons from "@expo/vector-icons/Ionicons";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 // Screens
 import HomeScreen from "./screens/HomeScreen";
-//import SignpostScreen from "./screens/SignpostScreen";
 import FavouritesScreen from "./screens/FavouritesScreen";
 import AboutScreen from "./screens/AboutScreen";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import SignpostList from "./components/SignpostList";
-import SignpostDetailsScreen from "./screens/SignpostDetailsScreen";
 import SignpostDetailsCardScreen from "./screens/SignpostDetailsCardScreen";
+import SignpostDetailsFullScreen from "./screens/SignpostDetailsFullScreen";
 
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
@@ -80,6 +79,7 @@ function StackNavigator() {
     >
       <Stack.Screen name="SignpostList" component={SignpostList} />
       <Stack.Screen name="SignpostDetails" component={SignpostDetailsCardScreen} />
+      <Stack.Screen name="SignpostDetailsFull" component={SignpostDetailsFullScreen} />
     </Stack.Navigator>
   );
 }

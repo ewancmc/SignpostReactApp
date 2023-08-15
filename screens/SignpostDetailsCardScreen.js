@@ -1,7 +1,19 @@
 import React, { Component } from "react";
-import { StyleSheet, View, Text, Image } from "react-native";
+import { StyleSheet, View, Text, Image, Pressable } from "react-native";
+import Images from '../images';
 
-function SignpostDetailsCardScreen({route, navigation}) {
+function imageSelect(id) {
+  const imageArray = {
+    '01' : Images.Signpost01,
+    '02' : Images.Signpost02,
+    '03' : Images.Signpost03,
+    '04' : Images.Signpost04,
+    '05' : Images.Signpost05,
+  } 
+  return imageArray[id]
+};
+
+const SignpostDetailsCardScreen = ({ route, navigation }) => {
   const { item } = route.params;
   return (
     <View style={styles.container}>
@@ -9,9 +21,20 @@ function SignpostDetailsCardScreen({route, navigation}) {
         <Text style={styles.titleStyle}>Signpost {item.id}</Text>
         <Text style={styles.subtitleStyle}>{item.title}</Text>
       </View>
+      <Pressable onPress={navigateFullDetails}>
+        <Image
+          source = {imageSelect(item.id)}
+          style={styles.cardItemImagePlace}
+        ></Image>
+      </Pressable>
     </View>
   );
-}
+  function navigateFullDetails() {
+    navigation.navigate("SignpostDetailsFull", {
+      item: item,
+    });
+  }
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -28,7 +51,6 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.1,
     shadowRadius: 1.5,
     elevation: 3,
-    overflow: "hidden",
   },
   bodyContent: {
     padding: 16,
@@ -48,8 +70,9 @@ const styles = StyleSheet.create({
   },
   cardItemImagePlace: {
     backgroundColor: "#ccc",
-    flex: 1,
-    minHeight: 210,
+    width: "100%",
+    height: undefined,
+    aspectRatio: 1,
   },
 });
 

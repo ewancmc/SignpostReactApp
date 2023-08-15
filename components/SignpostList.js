@@ -1,9 +1,8 @@
 import { View, FlatList, TouchableOpacity } from "react-native";
 import SignpostCard from "./SignpostCard";
-import SignpostData from "../data/signpost_data.json";
+import SignpostData from "../data/signpost_data";
 
 const SignpostList = ({ navigation }) => {
-  console.log(Object(SignpostData[0]['body_text']))
   return (
     <View>
       <FlatList
