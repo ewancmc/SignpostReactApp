@@ -24,6 +24,7 @@ function TabNavigator() {
         component={GalleryStackNavigator}
         options={{
           tabBarLabel: "Gallery",
+          unmountOnBlur: true,
           tabBarIcon: ({ focused, color, size }) => {
             let iconName;
             iconName = focused ? "images" : "images-outline";
