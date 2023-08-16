@@ -11,30 +11,31 @@ import AboutScreen from "./screens/AboutScreen";
 import SignpostList from "./components/SignpostList";
 import SignpostDetailsCardScreen from "./screens/SignpostDetailsCardScreen";
 import SignpostDetailsFullScreen from "./screens/SignpostDetailsFullScreen";
+import SignpostGalleryScreen from "./screens/SignpostGalleryScreen"
 
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
 
 function TabNavigator() {
   return (
-    <Tab.Navigator initialRouteName="Home">
+    <Tab.Navigator initialRouteName="Gallery">
       <Tab.Screen
-        name="Home"
-        component={HomeScreen}
+        name="Gallery"
+        component={GalleryStackNavigator}
         options={{
-          tabBarLabel: "Home",
+          tabBarLabel: "Gallery",
           tabBarIcon: ({ focused, color, size }) => {
             let iconName;
-            iconName = focused ? "home" : "home-outline";
+            iconName = focused ? "images" : "images-outline";
             return <Ionicons name={iconName} color={color} size={size} />;
           },
         }}
       />
       <Tab.Screen
-        name="Signpost"
-        component={StackNavigator}
+        name="List"
+        component={ListStackNavigator}
         options={{
-          tabBarLabel: "Signpost",
+          tabBarLabel: "List",
           unmountOnBlur: true,
           tabBarIcon: ({ focused, color, size }) => {
             let iconName;
@@ -71,13 +72,26 @@ function TabNavigator() {
   );
 }
 
-function StackNavigator() {
+function ListStackNavigator() {
   return (
     <Stack.Navigator
       screenOptions={{ headerShown: false }}
       initialRouteName="SignpostList"
     >
       <Stack.Screen name="SignpostList" component={SignpostList} />
+      <Stack.Screen name="SignpostDetails" component={SignpostDetailsCardScreen} />
+      <Stack.Screen name="SignpostDetailsFull" component={SignpostDetailsFullScreen} />
+    </Stack.Navigator>
+  );
+}
+
+function GalleryStackNavigator() {
+  return (
+    <Stack.Navigator
+      screenOptions={{ headerShown: false }}
+      initialRouteName="SignpostGallery"
+    >
+      <Stack.Screen name="SignpostGallery" component={SignpostGalleryScreen} />
       <Stack.Screen name="SignpostDetails" component={SignpostDetailsCardScreen} />
       <Stack.Screen name="SignpostDetailsFull" component={SignpostDetailsFullScreen} />
     </Stack.Navigator>

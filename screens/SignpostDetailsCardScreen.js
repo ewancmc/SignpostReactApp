@@ -1,17 +1,6 @@
 import React, { Component } from "react";
 import { StyleSheet, View, Text, Image, Pressable } from "react-native";
-import Images from '../images';
-
-function imageSelect(id) {
-  const imageArray = {
-    '01' : Images.Signpost01,
-    '02' : Images.Signpost02,
-    '03' : Images.Signpost03,
-    '04' : Images.Signpost04,
-    '05' : Images.Signpost05,
-  } 
-  return imageArray[id]
-};
+import { imageSelect } from "../images/imageSelect";
 
 const SignpostDetailsCardScreen = ({ route, navigation }) => {
   const { item } = route.params;
