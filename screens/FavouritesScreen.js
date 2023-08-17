@@ -25,12 +25,21 @@ const FavouritesScreen = ({ navigation }) => {
   };
   getFavourites();
 
+  if (favouritesIDList.length == 0) {
+    return (<View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
+    <Text
+      style={{ fontSize: 26, fontWeight: "bold" }}
+    >
+      Add a favourite
+    </Text>
+  </View>)
+  } else {
   return (
-    <View>
+     <View>
       <FlatList
         data={favouritesIDList}
         keyExtractor={({ id }) => id.toString()}
-        renderItem={({ item, index }) => {
+        renderItem={({ item }) => {
           return (
             <TouchableOpacity
               onPress={() =>
@@ -47,7 +56,7 @@ const FavouritesScreen = ({ navigation }) => {
         }}
       />
     </View>
-  );
+  )}
 };
 
 export default FavouritesScreen;

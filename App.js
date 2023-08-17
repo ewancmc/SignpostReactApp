@@ -47,7 +47,7 @@ function TabNavigator() {
       />
       <Tab.Screen
         name="Favourites"
-        component={FavouritesScreen}
+        component={FavouriteStackNavigator}
         options={{
           tabBarLabel: "Favourites",
           unmountOnBlur: true,
@@ -100,6 +100,18 @@ function GalleryStackNavigator() {
   );
 }
 
+function FavouriteStackNavigator() {
+  return (
+    <Stack.Navigator
+      screenOptions={{ headerShown: false }}
+      initialRouteName="SignpostFavourite"
+    >
+      <Stack.Screen name="SignpostGallery" component={FavouritesScreen} />
+      <Stack.Screen name="SignpostDetails" component={SignpostDetailsCardScreen} />
+      <Stack.Screen name="SignpostDetailsFull" component={SignpostDetailsFullScreen} />
+    </Stack.Navigator>
+  );
+}
 
 
 
