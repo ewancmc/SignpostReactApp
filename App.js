@@ -50,6 +50,7 @@ function TabNavigator() {
         component={FavouritesScreen}
         options={{
           tabBarLabel: "Favourites",
+          unmountOnBlur: true,
           tabBarIcon: ({ focused, color, size }) => {
             let iconName;
             iconName = focused ? "bookmark" : "bookmark-outline";

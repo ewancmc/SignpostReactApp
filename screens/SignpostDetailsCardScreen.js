@@ -33,9 +33,8 @@ const SignpostDetailsCardScreen = ({ route, navigation }) => {
       }
     } else {
       try {
-        //const jsonValue = JSON.stringify(value);
-        console.log(value)
-        await AsyncStorage.setItem(key, value);
+        const jsonValue = JSON.stringify(value);
+        await AsyncStorage.setItem(key, jsonValue);
       } catch (e) {
         // save error
       }
@@ -62,7 +61,7 @@ const SignpostDetailsCardScreen = ({ route, navigation }) => {
 
       <Pressable
         onPress={() => {
-          toggleFavourite(item.id, item.title);
+          toggleFavourite(item.id, item);
           setFavouriteIcon(!favouriteIcon);
         }}
       >
