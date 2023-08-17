@@ -100,6 +100,9 @@ function GalleryStackNavigator() {
   );
 }
 
+
+
+
 const App = () => {
   return (
     <NavigationContainer>

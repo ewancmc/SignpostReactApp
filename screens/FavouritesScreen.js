@@ -11,19 +11,19 @@ const FavouritesScreen = ({ navigation }) => {
   const getFavourites = async () => {
     //gets all keys in async storage
     try {
-      const itemsList = []
-      const keys = await AsyncStorage.getAllKeys()
-      const items = await AsyncStorage.multiGet(keys)
+      const itemsList = [];
+      const keys = await AsyncStorage.getAllKeys();
+      const items = await AsyncStorage.multiGet(keys);
       for (i in items) {
-        itemsList.push(JSON.parse(items[i][1]))
+        itemsList.push(JSON.parse(items[i][1]));
       }
-      setFavouritesIDList(itemsList)
-      return items
-  } catch (error) {
-      console.log(error, "problemo")
-  }
+      setFavouritesIDList(itemsList);
+      return items;
+    } catch (error) {
+      console.log(error, "problemo");
+    }
   };
-  getFavourites()
+  getFavourites();
 
   return (
     <View>
@@ -32,9 +32,17 @@ const FavouritesScreen = ({ navigation }) => {
         keyExtractor={({ id }) => id.toString()}
         renderItem={({ item, index }) => {
           return (
-            <View>
-              <SignpostCard signpost={item} />
-            </View>
+            <TouchableOpacity
+              onPress={() =>
+                navigation.navigate("SignpostDetails", {
+                  item: item,
+                })
+              }
+            >
+              <View>
+                <SignpostCard signpost={item} />
+              </View>
+            </TouchableOpacity>
           );
         }}
       />
