@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { memo } from "react";
 import { StyleSheet, View, Text } from "react-native";
 
 function SignpostCard(props) {
@@ -44,11 +44,11 @@ const styles = StyleSheet.create({
   },
   bodyContent: {
     padding: 16,
-    paddingTop: 24,
-    flex: 1
+    flex: 1,
+    justifyContent: 'center'
   },
   subtitleStyle: {
-    fontSize: 14,
+    fontSize: 15,
     color: "#000",
     lineHeight: 16,
     opacity: 0.5
@@ -62,15 +62,16 @@ const styles = StyleSheet.create({
     top: 0
   },
   loremIpsum: {
-    top: 12,
-    left: 0,
+    top: 15,
+    left: 1,
     position: "absolute",
     color: "#121212",
     height: 77,
     width: 80,
     fontSize: 40,
     textAlign: "center",
-    justifyContent: 'center'
+    justifyContent: 'center',
+    fontWeight: 'bold'
   },
   rectStack: {
     top: 9,
@@ -81,4 +82,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default SignpostCard;
+export default memo(SignpostCard);

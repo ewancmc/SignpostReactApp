@@ -3,6 +3,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { SafeAreaProvider } from "react-native-safe-area-context";
 
 // Screens
 import HomeScreen from "./screens/HomeScreen";
@@ -11,20 +12,24 @@ import AboutScreen from "./screens/AboutScreen";
 import SignpostList from "./components/SignpostList";
 import SignpostDetailsCardScreen from "./screens/SignpostDetailsCardScreen";
 import SignpostDetailsFullScreen from "./screens/SignpostDetailsFullScreen";
-import SignpostGalleryScreen from "./screens/SignpostGalleryScreen"
+import SignpostGalleryScreen from "./screens/SignpostGalleryScreen";
 
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
 
 function TabNavigator() {
   return (
-    <Tab.Navigator initialRouteName="Gallery">
+    <Tab.Navigator
+      initialRouteName="Gallery"
+      screenOptions={{ headerShown: false, tabBarShowLabel: false }}
+    >
       <Tab.Screen
         name="Gallery"
         component={GalleryStackNavigator}
+        listeners={({navigation}) => ({blur: () => navigation.setParams({screen: "SignpostGallery"})})}
         options={{
           tabBarLabel: "Gallery",
-          unmountOnBlur: true,
+          //runmountOnBlur: true,
           tabBarIcon: ({ focused, color, size }) => {
             let iconName;
             iconName = focused ? "images" : "images-outline";
@@ -35,6 +40,7 @@ function TabNavigator() {
       <Tab.Screen
         name="List"
         component={ListStackNavigator}
+        listeners={({navigation}) => ({blur: () => navigation.setParams({screen: "SignpostList"})})}
         options={{
           tabBarLabel: "List",
           unmountOnBlur: true,
@@ -81,8 +87,14 @@ function ListStackNavigator() {
       initialRouteName="SignpostList"
     >
       <Stack.Screen name="SignpostList" component={SignpostList} />
-      <Stack.Screen name="SignpostDetails" component={SignpostDetailsCardScreen} />
-      <Stack.Screen name="SignpostDetailsFull" component={SignpostDetailsFullScreen} />
+      <Stack.Screen
+        name="SignpostDetails"
+        component={SignpostDetailsCardScreen}
+      />
+      <Stack.Screen
+        name="SignpostDetailsFull"
+        component={SignpostDetailsFullScreen}
+      />
     </Stack.Navigator>
   );
 }
@@ -94,8 +106,14 @@ function GalleryStackNavigator() {
       initialRouteName="SignpostGallery"
     >
       <Stack.Screen name="SignpostGallery" component={SignpostGalleryScreen} />
-      <Stack.Screen name="SignpostDetails" component={SignpostDetailsCardScreen} />
-      <Stack.Screen name="SignpostDetailsFull" component={SignpostDetailsFullScreen} />
+      <Stack.Screen
+        name="SignpostDetails"
+        component={SignpostDetailsCardScreen}
+      />
+      <Stack.Screen
+        name="SignpostDetailsFull"
+        component={SignpostDetailsFullScreen}
+      />
     </Stack.Navigator>
   );
 }
@@ -103,23 +121,31 @@ function GalleryStackNavigator() {
 function FavouriteStackNavigator() {
   return (
     <Stack.Navigator
-      screenOptions={{ headerShown: false }}
+      screenOptions={{
+        headerShown: false
+      }}
       initialRouteName="SignpostFavourite"
     >
       <Stack.Screen name="SignpostGallery" component={FavouritesScreen} />
-      <Stack.Screen name="SignpostDetails" component={SignpostDetailsCardScreen} />
-      <Stack.Screen name="SignpostDetailsFull" component={SignpostDetailsFullScreen} />
+      <Stack.Screen
+        name="SignpostDetails"
+        component={SignpostDetailsCardScreen}
+      />
+      <Stack.Screen
+        name="SignpostDetailsFull"
+        component={SignpostDetailsFullScreen}
+      />
     </Stack.Navigator>
   );
 }
 
-
-
 const App = () => {
   return (
-    <NavigationContainer>
-      <TabNavigator />
-    </NavigationContainer>
+    <SafeAreaProvider>
+      <NavigationContainer>
+        <TabNavigator />
+      </NavigationContainer>
+    </SafeAreaProvider>
   );
 };
 

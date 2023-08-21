@@ -1,42 +1,716 @@
 [
-    {
-        "id": "01",
-        "title": "Exchanging ideas too early and too often hinders their diversity and potential to innovate",
-        "body_text": {
-            "1": "insert body here",
-            "2": "insert body here"
-        }
-    },
-    {
-        "id": "02",
-        "title": "The workplace should promote absurdity", 
-        "body_text": {
-            "1": "insert body here",
-            "2": "insert body here"
-        }
-    },
-    {
-        "id": "03",
-        "title": "The workplace should nurture our human traits", 
-        "body_text": {
-            "1": "insert body here",
-            "2": "insert body here"
-        }
-    },
-    {
-        "id": "04",
-        "title": "Adversities are worth keeping, even introduced, in the workplace to promote innovation", 
-        "body_text": {
-            "1": "insert body here",
-            "2": "insert body here"
-        }
-    },
-    {
-        "id": "05",
-        "title": "Aloneness needs to be within the ideal conditions of its effects on us (solitude) and the quality of the idea itself", 
-        "body_text": {
-            "1": "insert body here",
-            "2": "insert body here"
-        }
-    }
+  {
+    "id": "01",
+    "title": "Exchanging ideas too early and too often hinders their diversity and potential to innovate.",
+    "key_chapters": "1, 2, and 34",
+    "body_text": [
+      {
+        "id": "1",
+        "text": "The geographical barriers between the Galapagos Island resulted in the evolution of three distinct species of iguanas. In perfect isolation, these populations never met, so their genes had the opportunity to drift apart as they evolved in different ways to adapt to their environments. It’s mainly separations of this kind that were originally responsible for all the new species that have ever arisen in this planet. p.3"
+      },
+      {
+        "id": "2",
+        "text": "Isolation could create the conditions for diversity of ideas. These diverse ideas could lead to unknown innovations in an otherwise increasingly hyper-connected world. p.4"
+      },
+      {
+        "id": "3",
+        "text": "The moment you ask for two opinions on something new and interesting that you are doing, it will end up as a watered-down version. p.123"
+      },
+      {
+        "id": "4",
+        "text": "The level of trust we have with those who we share ideas with predetermines what will happen to the idea. But, while trust might allow the idea to develop, it might not contribute to, nor maintain, its uniqueness. p.123"
+      },
+      {
+        "id": "5",
+        "text": "In a strong tie (a person you talk to often), what you know and what they know overlaps a lot, and you’re more likely to have a similar worldview. But people who are far away in your social network, those which you don’t interact much with (weak ties) are less likely to know the same things and more likely to know information which is new to you. p.123"
+      },
+      {
+        "id": "6",
+        "text": "Organisations should be redesigned to intermittently isolate people from each other’s work for best collective performance in solving complex problems. p.124"
+      },
+      {
+        "id": "7",
+        "text": "We overestimate the value of a novel idea compared to a highly effective idea. Innovation can benefit more from an integrated idea than a diverse one, novelty on its own is not sufficient. p.124"
+      },
+      {
+        "id": "8",
+        "text": "Brainstorming groups produce fewer and poorer quality ideas than the same number of individuals working alone. p.125"
+      },
+      {
+        "id": "9",
+        "text": "It’s the social glue, as opposed to creativity which is the main benefit of group interaction. p.125"
+      }
+    ]
+  },
+  {
+    "id": "02",
+    "title": "The workplace should promote absurdity.",
+    "key_chapters": "3, 20, and 33",
+    "body_text": [
+      {
+        "id": "1",
+        "text": "The inconsistency of logic of absurdity can help to create futures that were once thought impossible. p.9"
+      },
+      {
+        "id": "2",
+        "text": "Absurdity challenges the assumptions that have shaped the workplace as a temple to rationality devoted to the relentless pursuit of optimised production. p.9"
+      },
+      {
+        "id": "3",
+        "text": "Our dysfunctional relationship with absurdity might come from conceiving it as a by-product of our rationality, without any value in itself.  p.118"
+      },
+      {
+        "id": "4",
+        "text": "Carnivals are little moments where people are allowed to be absurd, when the king dressed up as a peasant and the peasant dressed up as a king. Carnivals show the reverse side of the world where we have no choice but to see the world differently. But it’s only temporarily that we can upset the balance of everything. p.118"
+      },
+      {
+        "id": "5",
+        "text": "Disorderly environments can help people to break away from tradition, order, and convention. They activate a mindset that makes us seek novelty and unconventional routes. Minimalist design and desk sharing reduce the opportunities to make a mess and should be avoided to promote the exploration of new ideas. p.119"
+      },
+      {
+        "id": "6",
+        "text": "Foolishness can be used as a technology to escape the fettering logic of our reason.  Play is an example of this technology because it allows us to deliberately, though temporarily, explore possibilities outside the rules of rationality. p.119"
+      },
+      {
+        "id": "7",
+        "text": "Organisations that best manage paradoxes will be able to create more value. p.120"
+      },
+      {
+        "id": "8",
+        "text": "Innovation is an important purpose of an organisation, but 90% of their jobs must be absent of absurdity.  Organisations need absence of absurdity to deliver what they do, to complete the tasks. There’s no space for nonsense when we’re talking about coordination. p.121"
+      },
+      {
+        "id": "9",
+        "text": "Logic-based innovations lead to doing the same things we currently do cheaper and faster, but ‘absurdity-based’ innovations can deliver unimaginable futures. p.121"
+      }
+    ]
+  },
+  {
+    "id": "03",
+    "title": "The workplace should nurture our human traits.",
+    "key_chapters": "3",
+    "body_text": [
+      {
+        "id": "1",
+        "text": "The best environments to host the ever-evolving concept of work are those which nurture our human qualities. In particular, those qualities which set us apart from machines, artificial intelligence, and every other technology that aims to replace our body and mind. p.10"
+      }
+    ]
+  },
+  {
+    "id": "04",
+    "title": "Adversities are worth keeping, even introduced, in the workplace to promote innovation.",
+    "key_chapters": "6",
+    "body_text": [
+      {
+        "id": "1",
+        "text": "During the terror and bloodshed that prevailed in Italy for the 50 years the Borgias ruled, there emerged Michelangelo, Leonardo da Vinci, and The Renaissance. Switzerland, on the other hand, had 500 years of democracy, peace, and brotherly love and has given us the cuckoo clock. p.21"
+      },
+      {
+        "id": "2",
+        "text": "Nietzsche warned of the risks of aspiring to a society which seeks comfort and routine as this could breed an apathetic person who is tired of life, takes no risk, and has no dreams. p.22"
+      },
+      {
+        "id": "3",
+        "text": "Despite the potential of adversity to promote innovation, we (rightly so) tend to avoid adversity regardless of any benefits it might deliver. Finding practical ways to benefit from adversity in the workplace is difficult.  p.22"
+      },
+      {
+        "id": "4",
+        "text": "Architecture has a gene of optimism and utopia in it, we use architecture to ‘show the better’, which makes it difficult to use architecture, or design as a whole, to promote adversity. p.127"
+      },
+      {
+        "id": "5",
+        "text": "Adversity finds its way in organisations through intangible and tangible environments. In intangible environments adversity travels through the organisation’s culture and is managed using strategies such as humour and resilience. In tangible environments adversity is manifested through the physical environment (e.g. temperature and illumination) and is managed using ‘good design’. p.128"
+      },
+      {
+        "id": "6",
+        "text": "The extent to which discomfort is reduced in the workplace is taken as an indicator of the quality of the design. Achieving a frictionless workplace is perceived as the pinnacle of a great employee experience. p.129"
+      },
+      {
+        "id": "7",
+        "text": "‘Hostile design’ is a branch of design that uses adversity and discomfort to restrict behaviour and exclude a specific group of people, not to innovate. Adversity should not be used to alienate or exclude anyone in any environment. p.129"
+      },
+      {
+        "id": "8",
+        "text": "Employees with less resources become more resourceful, and their ingenuity could lead to innovation. p.130"
+      },
+      {
+        "id": "9",
+        "text": "An organisation with too many constraints can become too inflexible, on the other hand an organisation with too many resources can lead to inefficiencies that can fast-track their failure. An organisation with just the right amount of slack is better positioned to innovate. p.130"
+      },
+      {
+        "id": "10",
+        "text": "We are usually at adaptation level with respect to our environment and we filter out cognition of our physical surrounding. But by purposefully altering our environment we could reignite the adaptation process. The architecture we remember is that which never consoles or comfort us. p.130"
+      },
+      {
+        "id": "11",
+        "text": "Strenuous exercise and physical challenges create ‘adversity on tap’, one which can be controlled in its intensity, opted in, and opted out, even bragged about. We could learn from these events to find ways to successfully adopt adversity in the workplace. p. 131"
+      },
+      {
+        "id": "12",
+        "text": "Even if adversities are eliminated, people will still find adversity where they didn’t use to. We get pickier as things get better. If we can’t get rid of (the perception of) adversity, we might as well use it to our advantage. p.132"
+      },
+      {
+        "id": "13",
+        "text": "Working in tangible and intangible environments which increase in just the right amount the challenge that the environment asks from the person might lead to the innovation you seek. p.133"
+      }
+    ]
+  },
+  {
+    "id": "05",
+    "title": "Aloneness needs to be within the ideal conditions of its effects on us (solitude) and the quality of the idea itself.",
+    "key_chapters": "7",
+    "body_text": [
+      {
+        "id": "1",
+        "text": "Aloneness, the state of being by oneself, can lead to solitude or isolation. p.25"
+      },
+      {
+        "id": "2",
+        "text": "Solitude is the positive manifestation of aloneness and can lead to creativity. p.25"
+      },
+      {
+        "id": "3",
+        "text": "Isolation can lead to depression, stress, lack of motivation and burnout. The effects of isolation have been equated to reducing lifespan as much as smoking 15 cigarettes a day.  p.25"
+      },
+      {
+        "id": "4",
+        "text": "Working alone doesn’t necessarily end in feelings of isolation, just as working with others doesn’t eliminate them. An employee working amongst others can still feel isolated if they don’t feel part of the group. p.25"
+      },
+      {
+        "id": "5",
+        "text": "The best outcomes might come from balancing the right amount of one’s own ideas with those of others. p.25"
+      }
+    ]
+  },
+  {
+    "id": "06",
+    "title": "Boredom can become a useful thinking tool. ",
+    "key_chapters": "7",
+    "body_text": [
+      {
+        "id": "1",
+        "text": "Boredom can be detrimental. Some people prefer to administer electric shocks to themselves than being left alone with their thoughts. p. 26"
+      },
+      {
+        "id": "2",
+        "text": "If managed, boredom can be beautiful and useful. p. 26"
+      }
+    ]
+  },
+  {
+    "id": "07",
+    "title": "The subjectivity behind preparedness and readiness hinders the benchmarking of workplaces.",
+    "key_chapters": "8",
+    "body_text": [
+      {
+        "id": "1",
+        "text": "As organisations grow, space needs not only to be bigger to accommodate extra people, but also the space needs to be different to help organisations overcome the challenges and capitalise on the opportunities that may come as they go through different growth and maturity stages. p.27"
+      },
+      {
+        "id": "2",
+        "text": "Readiness and preparedness are personal attitudes towards an event. But whereas readiness is about feeling capable of taking immediate action, preparedness is the degree to which one feels able to deal with the consequence of an event, when or if it ever happens. p.28"
+      },
+      {
+        "id": "3",
+        "text": "The subjectivity embedded in what we need to satisfy our personal setpoint to make us feel either prepared or ready varies greatly in simple activities such as walking. This highlights the complexities of establishing setpoints (benchmarks) for organisations with intrinsically more complex activities. p.29"
+      }
+    ]
+  },
+  {
+    "id": "08",
+    "title": "Understanding the meaning of the workplace as well as its function can lead to better places of work.",
+    "key_chapters": "9",
+    "body_text": [
+      {
+        "id": "1",
+        "text": "In Greek mythology, Sisyphus pushed a large boulder up a hill, only for it to roll back down when it reached the top. He repeated this task over and over, for eternity. Sisyphus’ punishment illustrates the lack of purpose and meaning that can be experienced in work-related tasks. p.31"
+      },
+      {
+        "id": "2",
+        "text": "If Sisyphus’ boulder was put on a conveyor belt that took it up and down the hill automatically, he might experience relief followed by a well-deserved rest. But then what? p.32"
+      },
+      {
+        "id": "3",
+        "text": "When workers have enough money to support themselves, they still value work in keeping ties to society, promoting personal fulfilment, and maintaining a sense of well-being. p.32"
+      },
+      {
+        "id": "4",
+        "text": "The meaning of work interest psychologists, sociologists, economists, organisational scholars, and philosophers. Architects do not tend to share such interest, but they might be able to design better places to work if they understood the meaning of work as well as the activities needed to do it. p.32"
+      }
+    ]
+  },
+  {
+    "id": "09",
+    "title": "Experience design and organisation design need to be aligned in the workplace for the organisation to achieve its objectives.",
+    "key_chapters": "11",
+    "body_text": [
+      {
+        "id": "1",
+        "text": "Fun can justify doing something as crazy as walking 1,000 km – and working long hours. This aspect of fun has long been understood by proponents of the ‘office-as-playpen’. p.35"
+      },
+      {
+        "id": "2",
+        "text": "From beanbags and ping-pong tables to breathtaking digital installations in the lobby and in-house top chefs, the proposition is still the same: employees would stay put and work hard in a fun environment. p.35"
+      },
+      {
+        "id": "3",
+        "text": "Designing experiences is as old as the earliest human impulse to develop rituals and ceremonies, but the influx of experience designers in the workplace would have been unthinkable a few decades ago. Today, ‘experience’ is paramount. p.35"
+      },
+      {
+        "id": "4",
+        "text": "If experiences are not anchored back to how employees perform their tasks (division of labour) and how these tasks are then reintegrated (integration of effort) to meet the strategic objectives of their organisation, these experiences risk becoming mere gimmicks. p.36"
+      }
+    ]
+  },
+  {
+    "id": "10",
+    "title": "Moving at slow speed allows us to interact with people, but we still need symbols in the workplace for others and for our personal identity.",
+    "key_chapters": "13",
+    "body_text": [
+      {
+        "id": "1",
+        "body": "Travelling at slow speeds (walking) lets us perceive objects in the environment with great detail. As our speed increases (driving a car) these objects need to be replaced by bigger symbols that communicate the message related to the objects they replace. The size of symbols need to increase with the speed of the observer for effective communication to take place. p.41"
+      },
+      {
+        "id": "2",
+        "body": "Though we move at slow speed in the office, we still need symbols to create identity and a positive display of territoriality. p.43"
+      }
+    ]
+  },
+  {
+    "id": "11",
+    "title": "The process of designing a workplace can get in the way of creating an environment which meets its purpose.",
+    "key_chapters": "13",
+    "body_text": [
+      {
+        "id": "1",
+        "text": "Objects can help employees to reinforce their identity and communicate it to others. For example, an illumination engineer displaying lightbulbs on top of their desk. p.41"
+      },
+      {
+        "id": "2",
+        "text": "Focusing on efficiency and space utilisation in the workplace can lead us to confuse the practicalities of designing an office, such as cost per square metre, with the real purpose of the workplace. p.43"
+      }
+    ]
+  },
+  {
+    "id": "12",
+    "title": "There is beauty in the ugliness of personalisation.",
+    "key_chapters": "14",
+    "body_text": [
+      {
+        "id": "1",
+        "text": "Pictures in architectural magazines are taken before employees have the opportunity to make the space their own. p.45"
+      },
+      {
+        "id": "2",
+        "text": "We favour the aspirational beauty of the impersonal in the workplace. p.45"
+      }
+    ]
+  },
+  {
+    "id": "13",
+    "title": "Absurdity can result in greater meaning and purpose.",
+    "key_chapters": "14",
+    "body_text": [
+      {
+        "id": "1",
+        "text": "It would seem absurd to add unnecessary effort to tasks, but that extra effort could add meaning to the task and make it purposeful. Is it better to go with the optimal rational option, or the absurdly meaningful one? p. 47"
+      }
+    ]
+  },
+  {
+    "id": "14",
+    "title": "Seeing normality through absurdity can show the absurd as normal.",
+    "key_chapters": "14",
+    "body_text": [
+      {
+        "id": "1",
+        "text": "Creating an absurd scenario can show how absurd are things we take as normal. p.50"
+      }
+    ]
+  },
+  {
+    "id": "15",
+    "title": "Normality can be the offspring of the unchallenged.",
+    "key_chapters": "15",
+    "body_text": [
+      {
+        "id": "1",
+        "body": "Going to the same place to work from 9 to 5 seems normal, until challenged. p.50"
+      }
+    ]
+  },
+  {
+    "id": "16",
+    "title": "Strong cohesion can have the benefits and pitfalls of a small country town.",
+    "key_chapters": "16",
+    "body_text": [
+      {
+        "id": "1",
+        "text": "A positive attribute of small towns is the way communities rally around those in need. In larger towns and cities, it is easier to ignore the misfortunes of those we don’t know. The bad side of closed knit communities is that it can lead to alienation. The ugly side is when ongoing coexistence leads to the further alienation of outsiders, or those who are not part of the small-town social bond. p.54"
+      },
+      {
+        "id": "2",
+        "text": "A highly cohesive team might lead to increased performance, but might also suffer from stale ideas or miss on the benefits that come from the input of new members who challenge the team. p.55"
+      }
+    ]
+  },
+  {
+    "id": "17",
+    "title": "Increasing opportunities to socialise might not result in a more inclusive environment.",
+    "key_chapters": "16",
+    "body_text": [
+      {
+        "id": "1",
+        "text": "Women in the workplace can have an above average level of socialisation with their colleagues and still be excluded from organisation shaping interactions. p.55"
+      }
+    ]
+  },
+  {
+    "id": "18",
+    "title": "The noise of knowledge transfer could be the sound of collaboration.",
+    "key_chapters": "16",
+    "body_text": [
+      {
+        "id": "1",
+        "text": "The digital by-product of operations (e.g., sending emails, booking rooms), known as ‘digital exhaust’, can be useful to understand organisations. p. 57"
+      },
+      {
+        "id": "2",
+        "text": "A noise is an unpleasant sound. But we could turn noise in the workplace into sound if we are able to assign it a value of knowledge transfer."
+      },
+      {
+        "id": "3",
+        "text": "Information can travel silently through an organisation (e.g., email) but interactions that underpin collaboration, as opposed to a mere exchange of information are better supported by face-to-face interactions, which are often noisy."
+      }
+    ]
+  },
+  {
+    "id": "19",
+    "title": "Designing work first and then the workplace could lead to dramatic new forms of value.",
+    "key_chapters": "18",
+    "body_text": [
+      {
+        "id": "1",
+        "text": "Historically, design has been a downstream step in the development process where designers come along and put a beautiful wrapper around an idea conceived by others. Imagine the new forms of value that could be created if designers were involved in designing the idea of work first, and then its wrapper. p.62"
+      }
+    ]
+  },
+  {
+    "id": "20",
+    "title": "Good design aligns the work aesthetic of an organisation with its looks.",
+    "key_chapters": "18",
+    "body_text": [
+      {
+        "id": "1",
+        "text": "How a workplace looks is important because it communicates the ambitions of the people and organisation it houses and influence the interactions the organisation has with its employees and clients. p.62"
+      },
+      {
+        "id": "2",
+        "text": "Looks are important, and they go beyond beauty. We should not confuse good taste for good design. p.62"
+      }
+    ]
+  },
+  {
+    "id": "21",
+    "title": "Social proximity can promote empathy.",
+    "key_chapters": "19",
+    "body_text": [
+      {
+        "id": "1",
+        "text": "Empathy seems to become stronger the closer we are to the situation. A sort of a radius of empathy, in which its effects decay as the radius increases. p.66"
+      },
+      {
+        "id": "2",
+        "text": "The ‘radius of empathy’ might be a compelling reason for having people collocated at the workplace. p.66"
+      }
+    ]
+  },
+  {
+    "id": "22",
+    "title": "(B)ehaviour in the workplace can vary as a result of changes in the (E)nvironment and/or the (P)erson.",
+    "key_chapters": "21",
+    "body_text": [
+      {
+        "id": "1",
+        "text": "B = ƒ(P,E)"
+      },
+      {
+        "id": "2",
+        "text": "(B)ehaviour is a function of the (P)erson and their (E)nvironment. p.72"
+      },
+      {
+        "id": "3",
+        "text": "Designers focus their attention on the (E)nvironment part of the equation and their aim is to shape it in a way that will promote certain (B)ehaviour. p.72"
+      },
+      {
+        "id": "4",
+        "text": "Behaviour, not space, is enclosed by architecture. p.72"
+      },
+      {
+        "id": "5",
+        "text": "Designers tend to use personas to deal with the (P)erson’s part. However, once conceived, these personas are thought to be constant, closer to demographic stereotypes, than humans. This is a problem because physically identical environments can feel different under subtle changes in the person, for instance when a person is hungry and when the person is satiated. p.72"
+      },
+      {
+        "id": "6",
+        "text": "Those working with the (E)nvironment (e.g. designers) should not to forget about the changing nature of the (P)erson. p.72"
+      }
+    ]
+  },
+  {
+    "id": "23",
+    "title": "The workplace is not only what we can measure.",
+    "key_chapters": "23",
+    "body_text": [
+      {
+        "id": "1",
+        "text": "Hard to quantify parameters in the workplace are not less important than those that can be measured. p.81"
+      },
+      {
+        "id": "2",
+        "text": "Not everything that can be counted counts, and not everything that counts can be counted. p.81"
+      }
+    ]
+  },
+  {
+    "id": "24",
+    "title": "The difficulty in changing our beliefs can hinder the adoption of innovation.",
+    "key_chapters": "23",
+    "body_text": [
+      {
+        "id": "1",
+        "text": "We should avoid adoption of ideas which we might have good reasons to avoid, but we should reconsider those which we discard for no other reason than that they question our beliefs. A good way to differentiate between these two is to examine the extent of the visceral reaction one has to the idea."
+      },
+      {
+        "id": "2",
+        "text": "Do not cherry-pick evidence that aligns with your believes while avoiding that which discredit them."
+      },
+      {
+        "id": "3",
+        "text": "A new idea makes you think that after all, your favourite notions may be wrong, your firmest beliefs ill-founded."
+      }
+    ]
+  },
+  {
+    "id": "25",
+    "title": "Work and tasks are different yet interconnected.",
+    "key_chapters": "24",
+    "body_text": [
+      {
+        "id": "1",
+        "text": "Work and tasks have a similar relationship with each other as a pilgrimage has with its walk. p.86"
+      },
+      {
+        "id": "2",
+        "text": "We progress work through tasks just as we progress a pilgrimage by walking. But both, work and a pilgrimage are much more than the sum of its tasks or accumulated step. p.86"
+      },
+      {
+        "id": "3",
+        "text": "We can measure the distance covered while walking but we can’t measure a pilgrimage, just as we can measure tasks, but not work. p.86"
+      },
+      {
+        "id": "4",
+        "text": "Pilgrimages and work, stand to lose a lot when we reduce them to their most common metrics: distance covered and its outputs. p.86"
+      },
+      {
+        "id": "6",
+        "text": "Note: Signposts 25, 26, and 27 are closely related and share the same points."
+      }
+    ]
+  },
+  {
+    "id": "26",
+    "title": "Work is intangible, tasks are tangible.",
+    "key_chapters": "24",
+    "body_text": [
+      {
+        "id": "1",
+        "text": "Work and tasks have a similar relationship with each other as a pilgrimage has with its walk. p.86"
+      },
+      {
+        "id": "2",
+        "text": "We progress work through tasks just as we progress a pilgrimage by walking. But both, work and a pilgrimage are much more than the sum of its tasks or accumulated step. p.86"
+      },
+      {
+        "id": "3",
+        "text": "We can measure the distance covered while walking but we can’t measure a pilgrimage, just as we can measure tasks, but not work. p.86"
+      },
+      {
+        "id": "4",
+        "text": "Pilgrimages and work, stand to lose a lot when we reduce them to their most common metrics: distance covered and its outputs. p.86"
+      },
+      {
+        "id": "6",
+        "text": "Note: Signposts 25, 26, and 27 are closely related and share the same points."
+      }
+    ]
+  },
+  {
+    "id": "27",
+    "title": "Work is more than its output.",
+    "key_chapters": "24",
+    "body_text": [
+      {
+        "id": "1",
+        "text": "Work and tasks have a similar relationship with each other as a pilgrimage has with its walk. p.86"
+      },
+      {
+        "id": "2",
+        "text": "We progress work through tasks just as we progress a pilgrimage by walking. But both, work and a pilgrimage are much more than the sum of its tasks or accumulated step. p.86"
+      },
+      {
+        "id": "3",
+        "text": "We can measure the distance covered while walking but we can’t measure a pilgrimage, just as we can measure tasks, but not work. p.86"
+      },
+      {
+        "id": "4",
+        "text": "Pilgrimages and work, stand to lose a lot when we reduce them to their most common metrics: distance covered and its outputs. p.86"
+      },
+      {
+        "id": "6",
+        "text": "Note: Signposts 25, 26, and 27 are closely related and share the same points."
+      }
+    ]
+  },
+  {
+    "id": "28",
+    "title": "The workplace could benefit from lessons derived from instances where work can’t be done.",
+    "key_chapters": "24",
+    "body_text": [
+      {
+        "id": "1",
+        "text": "Our predominant view about work, and thereafter the workplace, comes from our ability to work. But learning from instances in which work can’t be done, can help us design better workplaces. p.87"
+      },
+      {
+        "id": "2",
+        "text": "Lessons from a state of preclusion from engagement in occupations of necessity and/or meaning due to factors that stand outside the immediate control of the individual, would allow us to see work as more than a sum of its tasks. p.87"
+      },
+      {
+        "id": "3",
+        "text": "Inmates in a prison would get up before dawn, exchange cigarettes and negotiate privileges to be able to do a job, for the sake of having something to do. Such job was to feed the fish in a fish tank. p.87"
+      }
+    ]
+  },
+  {
+    "id": "29",
+    "title": "Work which is aligned with its environment does not require added meaning.",
+    "key_chapters": "25",
+    "body_text": [
+      {
+        "id": "1",
+        "text": "Adding meaning, if not purpose, to help people undertake routine tasks are sometimes used by some organisations to rebrand the mundane as exciting. For example, in lieu of going to the office every day, we are offered a chance to be a hero every day, see a clear path to success, engage in personal quest-based narratives and win prizes at work. Such is the offering of a company using “all the mechanisms and strategies that make games exciting and addictive to sustainably drive employee engagement, learning, and performance”  an approach known as gamification. p.91"
+      },
+      {
+        "id": "2",
+        "text": "Gamification can add purpose to otherwise meaningless tasks, but doing meaningful work in a properly designed workplace should not need gamification. p.91"
+      }
+    ]
+  },
+  {
+    "id": "30",
+    "title": "The pursuit of efficiencies might strip work of its meaning.",
+    "key_chapters": "25",
+    "body_text": [
+      {
+        "id": "1",
+        "text": "The use of gamification in the workplace might be an indication that work and tasks can be decoupled, leaving tasks void of the meaning provided by work. p. 91"
+      },
+      {
+        "id": "2",
+        "text": "In order to become more productive at a lower cost is necessary to explore opportunities to make tasks more efficient. This rational efficiency process comes at the expense of removing traditions, values, and emotions which were strong motivators within such activities. p.91"
+      },
+      {
+        "id": "3",
+        "text": "Rational efficiency might make an organisation more efficient, but conversely it could strip them naked. The proliferation of rituals adopted by some organisations illustrates the process of re-introducing activities that may have fallen victims to rational efficiency. p.91"
+      },
+      {
+        "id": "4",
+        "text": "Note: Signposts 30 and 31 are closely related and share the same points."
+      }
+    ]
+  },
+  {
+    "id": "31",
+    "title": "The need of gamification and added rituals might be tell-tale signs of an overly efficient workplace.",
+    "key_chapters": "25",
+    "body_text": [
+      {
+        "id": "1",
+        "text": "The use of gamification in the workplace might be an indication that work and tasks can be decoupled, leaving tasks void of the meaning provided by work. p. 91"
+      },
+      {
+        "id": "2",
+        "text": "In order to become more productive at a lower cost is necessary to explore opportunities to make tasks more efficient. This rational efficiency process comes at the expense of removing traditions, values, and emotions which were strong motivators within such activities. p.91"
+      },
+      {
+        "id": "3",
+        "text": "Rational efficiency might make an organisation more efficient, but conversely it could strip them naked. The proliferation of rituals adopted by some organisations illustrates the process of re-introducing activities that may have fallen victims to rational efficiency. p.91"
+      },
+      {
+        "id": "4",
+        "text": "Note: Signposts 30 and 31 are closely related and share the same points."
+      }
+    ]
+  },
+  {
+    "id": "32",
+    "title": "Understanding work cues can help improve current and emerging work environments.",
+    "key_chapters": "26",
+    "body_text": [
+      {
+        "id": "1",
+        "text": "Skeuomorphism aims to give an object (digital or analogue) the properties of another object it tries to represent so that the imitation inherits the familiarity and evoke similar emotions as the original. p.95"
+      },
+      {
+        "id": "2",
+        "text": "Skeuomorphism requires knowledge of the key characteristics of the original object to appropriately convey essence, and then it must discover ways to transfer those into the new object. p.95"
+      },
+      {
+        "id": "3",
+        "text": "Applying a skeuomorphic approach to workplace design might allow us to transfer cues of work from one environment to the other. p.95"
+      }
+    ]
+  },
+  {
+    "id": "33",
+    "title": "The workplace is also what it is not.",
+    "key_chapters": "26",
+    "body_text": [
+      {
+        "id": "1",
+        "text": "A list of what makes a workplace would be useful, but also incomplete because work is also defined by what it is not. For example, work is that which is not leisure. The workplace needs not only to satisfy its own list of requirements, it should also manage those of other domains it might be in conflict with. p.97"
+      },
+      {
+        "id": "2",
+        "text": "People have developed different ways to integrate, or segment, work and life domains by creating, managing, and crossing their border. While some might work happily on a laptop at the dining table, others might not have walls at home thick enough, physically or metaphorically, to create the segmentation they need. p.98"
+      },
+      {
+        "id": "3",
+        "text": "Designers have overlooked exploring the design implications of working from home. p.98"
+      },
+      {
+        "id": "4",
+        "text": "The workplace (the place where people work) doesn’t cease to exist when people stop going to the office and start working from home – if anything the workplace multiplies. p.98"
+      },
+      {
+        "id": "5",
+        "text": "An assumption about the workplace is equating it with the office. However, the office is a relatively recent phenomenon in the history of work. An invention of sorts which came out of a complex economic, social and technology context which for the most part has ceased to be relevant. p.98"
+      }
+    ]
+  },
+  {
+    "id": "34",
+    "title": "In the absence of work, with only tasks left to do, no workplace would suffice.",
+    "key_chapters": "27",
+    "body_text": [
+      {
+        "id": "1",
+        "text": "Thinking about work and the workplace during a pilgrimage leads to insights which lean heavily towards their purpose, meaning and essence. These reflections might seem outside the realm of workplace design, but these Signposts could help design better places of work. p.102"
+      },
+      {
+        "id": "2",
+        "text": "“One who knows the why, can bear almost any how”, might sound a bit too existentialist for a book on workplace design, but if slightly adjusted, its wisdom becomes very relevant: one who doesn’t know the why, might not bear any how. When fleshed out more it becomes our last Signpost. p.102"
+      }
+    ]
+  }
 ]

@@ -53,9 +53,10 @@ const styles = StyleSheet.create({
     height: 40,
     width: 40,
     fontSize: 30,
+    fontWeight: 'bold',
     textAlign: "center",
     marginTop: 6,
-    marginLeft: 6,
+    marginLeft: 5,
   },
 });
 
