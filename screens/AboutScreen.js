@@ -1,5 +1,5 @@
 import * as React from "react";
-import { View, Text, Button } from "react-native";
+import { View, Text, StyleSheet, Image } from "react-native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import {
   SafeAreaProvider,
@@ -9,43 +9,6 @@ import {
 export default function AboutScreen({ navigation }) {
   const insets = useSafeAreaInsets();
 
-  //Initialise state for  favourites list
-  const [favouritesIDList, setFavouritesIDList] = React.useState([]);
-  const [favouritesList, setFavouritesList] = React.useState([]);
-
-  clearAll = async () => {
-    try {
-      await AsyncStorage.clear();
-    } catch (e) {
-      // clear error
-    }
-
-    console.log("Done.");
-  };
-
-  //  //gets favourite list
-  //  getFavourite = async () => {
-  //    //gets all keys in async storage
-  //    let keys = [];
-  //    try {
-  //      keys = await AsyncStorage.getAllKeys();
-  //      setFavouritesIDList(keys);
-  //
-  //    } catch (e) {
-  //      // read key error
-  //    }
-  //
-  //    //returns values for keys
-  //  };
-  //gets favourite list
-  getFavouriteID = async () => {
-    //gets all keys in async storage
-    let keys = [];
-    keys = await AsyncStorage.getAllKeys();
-    setFavouritesIDList(keys);
-  };
-  getFavouriteID();
-
   return (
     <SafeAreaProvider>
       <View
@@ -53,25 +16,61 @@ export default function AboutScreen({ navigation }) {
           flex: 1,
           alignItems: "center",
           justifyContent: "center",
+          flexDirection: "column",
           paddingTop: insets.top,
         }}
       >
-        <Button
-          title="Clear async storage"
-          onPress={() => clearAll()}
-          style={{ fontSize: 26, fontWeight: "bold" }}
+        <Text style={styles.textItem}>
+          This app is based on the book The Pilgrim’s Guide to the Workplace by
+          Dr. Agustin Chevez.
+        </Text>
+        <Text style={styles.textItem}>
+          It’s not necessary to read the book to use this app, but you will get
+          much more out of the Signposts, and understand the illustrations
+          better, if you do so.
+        </Text>
+        <Text style={styles.textItem}>
+          This book is Open Access and can be downloaded for free. Reading not
+          your thing? There is also an audiobook version.
+        </Text>
+        <Text style={{ padding: 5 }}>More about the book here:</Text>
+        <Image
+          style={styles.image}
+          source={require("../assets/book_cover.png")}
         />
-        <Button
-          title="Print favourites ID list"
-          onPress={() => console.log(favouritesIDList)}
-          style={{ fontSize: 26, fontWeight: "bold" }}
-        />
-        <Button
-          title="Print favourites list"
-          onPress={() => console.log(favouritesList)}
-          style={{ fontSize: 26, fontWeight: "bold" }}
-        />
+        <View style={styles.footerContainer}>
+          <Text style={styles.textFooter}>
+            Images created by Midjourney from prompts by the author.
+          </Text>
+          <Text style={styles.textFooter}>
+            This app has been developed by Ewan Clarke-McIntyre.
+          </Text>
+          <Text style={styles.textFooter}>All rights reserved 2023 ©</Text>
+        </View>
       </View>
     </SafeAreaProvider>
   );
 }
+
+const styles = StyleSheet.create({
+  textItem: {
+    width: 350,
+    padding: 10,
+    textAlign: "auto",
+  },
+  image: {
+    aspectRatio: 0.608,
+    height: 200,
+  },
+  footerContainer: {
+    padding:30,
+    justifyContent: "flex-end",
+  },
+  textFooter: {
+    width: 350,
+    fontSize: 10,
+    padding: 2,
+    opacity: 0.5,
+    textAlign: "center",
+  },
+});

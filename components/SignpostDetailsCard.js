@@ -4,7 +4,7 @@ import { FlatList, StyleSheet, View, Text } from "react-native";
 function SignpostDetailsCard(props) {
   const bodyText = props.signpost.body_text;
   return (
-    <View style={[styles.container, props.style]}>
+    <View style={[styles.container, { height: props.windowHeight }]}>
       <View style={styles.cardBody}>
         <View style={styles.bodyContent}>
           <Text style={styles.subtitleStyle}>{props.signpost.title}</Text>
@@ -20,6 +20,7 @@ function SignpostDetailsCard(props) {
           </Text>
         </View>
       </View>
+
       <FlatList
         data={bodyText}
         keyExtractor={({ id }) => id.toString()}
@@ -30,7 +31,7 @@ function SignpostDetailsCard(props) {
                 <Text style={{ fontWeight: "bold" }}>
                   {props.signpost.id - 0}.{item.id + " "}
                 </Text>
-                 {item.text}
+                {item.text}
               </Text>
             </View>
           </View>
