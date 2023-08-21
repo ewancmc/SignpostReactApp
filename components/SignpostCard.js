@@ -43,32 +43,34 @@ const styles = StyleSheet.create({
     height: 99
   },
   bodyContent: {
-    padding: 16,
+    padding: 5,
+    paddingRight:10,
     flex: 1,
     justifyContent: 'center'
   },
   subtitleStyle: {
-    fontSize: 15,
+    fontSize: 17,
+    fontFamily: 'Avenir',
     color: "#000",
-    lineHeight: 16,
-    opacity: 0.5
+    lineHeight: 18,
   },
   rect: {
     left: 1,
     width: 80,
     height: 80,
     position: "absolute",
-    backgroundColor: "#E6E6E6",
+    backgroundColor: "#000",
     top: 0
   },
   loremIpsum: {
     top: 15,
     left: 1,
     position: "absolute",
-    color: "#121212",
+    color: "#fff",
     height: 77,
     width: 80,
     fontSize: 40,
+    fontFamily: 'Avenir',
     textAlign: "center",
     justifyContent: 'center',
     fontWeight: 'bold'

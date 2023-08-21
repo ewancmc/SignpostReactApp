@@ -57,6 +57,7 @@ const styles = StyleSheet.create({
     width: 350,
     padding: 10,
     textAlign: "auto",
+    fontFamily: 'Avenir',
   },
   image: {
     aspectRatio: 0.608,

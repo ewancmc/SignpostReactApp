@@ -1,11 +1,5 @@
 import React from "react";
-import {
-  StyleSheet,
-  View,
-  Text,
-  Image,
-  Pressable,
-} from "react-native";
+import { StyleSheet, View, Text, Image, Pressable } from "react-native";
 import { imageSelect } from "../images/imageSelect";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import AsyncStorage from "@react-native-async-storage/async-storage";
@@ -14,6 +8,10 @@ import {
   useSafeAreaInsets,
 } from "react-native-safe-area-context";
 import { useSwipe } from "../hooks/useSwipe";
+import {
+  GestureHandlerRootView,
+  ScrollView,
+} from "react-native-gesture-handler";
 
 const SignpostDetailsCardScreen = ({ route, navigation }) => {
   const { onTouchStart, onTouchEnd } = useSwipe(onSwipeLeft, onSwipeRight, 6);
@@ -72,29 +70,33 @@ const SignpostDetailsCardScreen = ({ route, navigation }) => {
 
   return (
     <SafeAreaProvider onTouchStart={onTouchStart} onTouchEnd={onTouchEnd}>
-      <View style={[styles.container, { paddingTop: insets.top }]}>
-        <Image
-          source={imageSelect(item.id)}
-          style={styles.cardItemImagePlace}
-        ></Image>
-        <View style={styles.bodyContent}>
-          <View style={styles.titleRow}>
-            <Text style={styles.titleStyle}>Signpost {item.id}</Text>
-            <Pressable
-              onPress={() => {
-                toggleFavourite(item.id, item);
-                setFavouriteIcon(!favouriteIcon);
-              }}
-            >
-              <Ionicons
-                name={favouriteIcon ? "bookmark" : "bookmark-outline"}
-                style={styles.icon}
-              />
-            </Pressable>
+      <GestureHandlerRootView>
+        <ScrollView>
+          <View style={[styles.container, { paddingTop: insets.top }]}>
+            <Image
+              source={imageSelect(item.id)}
+              style={styles.cardItemImagePlace}
+            ></Image>
+            <View style={styles.bodyContent}>
+              <View style={styles.titleRow}>
+                <Text style={styles.titleStyle}>Signpost {item.id}</Text>
+                <Pressable
+                  onPress={() => {
+                    toggleFavourite(item.id, item);
+                    setFavouriteIcon(!favouriteIcon);
+                  }}
+                >
+                  <Ionicons
+                    name={favouriteIcon ? "bookmark" : "bookmark-outline"}
+                    style={styles.icon}
+                  />
+                </Pressable>
+              </View>
+              <Text style={styles.subtitleStyle}>{item.title}</Text>
+            </View>
           </View>
-          <Text style={styles.subtitleStyle}>{item.title}</Text>
-        </View>
-      </View>
+        </ScrollView>
+      </GestureHandlerRootView>
     </SafeAreaProvider>
   );
 };
@@ -129,22 +131,24 @@ const styles = StyleSheet.create({
   titleRow: {
     flexDirection: "row",
     justifyContent: "space-between",
-    paddingBottom: 10,
+    paddingBottom: 5,
   },
   titleStyle: {
     fontSize: 40,
+    fontFamily: "AvenirBold",
     color: "#000",
     paddingBottom: 12,
+    paddingTop: 5,
   },
   subtitleStyle: {
-    fontSize: 20,
+    fontSize: 22,
+    fontFamily: "Avenir",
     color: "#000",
-    opacity: 0.5,
   },
   icon: {
     color: "rgba(0,0,0,1)",
     fontSize: 40,
-    paddingTop: 5,
+    //paddingTop: 5,
   },
 });
 

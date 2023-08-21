@@ -269,11 +269,11 @@
     "body_text": [
       {
         "id": "1",
-        "body": "Travelling at slow speeds (walking) lets us perceive objects in the environment with great detail. As our speed increases (driving a car) these objects need to be replaced by bigger symbols that communicate the message related to the objects they replace. The size of symbols need to increase with the speed of the observer for effective communication to take place. p.41"
+        "text": "Travelling at slow speeds (walking) lets us perceive objects in the environment with great detail. As our speed increases (driving a car) these objects need to be replaced by bigger symbols that communicate the message related to the objects they replace. The size of symbols need to increase with the speed of the observer for effective communication to take place. p.41"
       },
       {
         "id": "2",
-        "body": "Though we move at slow speed in the office, we still need symbols to create identity and a positive display of territoriality. p.43"
+        "text": "Though we move at slow speed in the office, we still need symbols to create identity and a positive display of territoriality. p.43"
       }
     ]
   },

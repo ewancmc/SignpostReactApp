@@ -1,12 +1,14 @@
 import * as React from "react";
+import { useCallback, useEffect, useState } from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { SafeAreaProvider } from "react-native-safe-area-context";
+import * as Font from "expo-font";
+import * as SplashScreen from "expo-splash-screen";
 
 // Screens
-import HomeScreen from "./screens/HomeScreen";
 import FavouritesScreen from "./screens/FavouritesScreen";
 import AboutScreen from "./screens/AboutScreen";
 import SignpostList from "./components/SignpostList";
@@ -26,7 +28,9 @@ function TabNavigator() {
       <Tab.Screen
         name="Gallery"
         component={GalleryStackNavigator}
-        listeners={({navigation}) => ({blur: () => navigation.setParams({screen: "SignpostGallery"})})}
+        listeners={({ navigation }) => ({
+          blur: () => navigation.setParams({ screen: "SignpostGallery" }),
+        })}
         options={{
           tabBarLabel: "Gallery",
           //runmountOnBlur: true,
@@ -40,7 +44,9 @@ function TabNavigator() {
       <Tab.Screen
         name="List"
         component={ListStackNavigator}
-        listeners={({navigation}) => ({blur: () => navigation.setParams({screen: "SignpostList"})})}
+        listeners={({ navigation }) => ({
+          blur: () => navigation.setParams({ screen: "SignpostList" }),
+        })}
         options={{
           tabBarLabel: "List",
           unmountOnBlur: true,
@@ -122,7 +128,7 @@ function FavouriteStackNavigator() {
   return (
     <Stack.Navigator
       screenOptions={{
-        headerShown: false
+        headerShown: false,
       }}
       initialRouteName="SignpostFavourite"
     >
@@ -139,12 +145,52 @@ function FavouriteStackNavigator() {
   );
 }
 
+SplashScreen.preventAutoHideAsync();
+
 const App = () => {
+  const [appIsReady, setAppIsReady] = useState(false);
+
+  useEffect(() => {
+    async function prepare() {
+      try {
+        await Font.loadAsync({
+          Avenir: require("./assets/fonts/AvenirNextLTProRegular.otf"),
+          AvenirBold: require("./assets/fonts/AvenirNextLTProBold.otf")
+        });
+        // Artificially delay for two seconds to simulate a slow loading
+        // experience. Please remove this if you copy and paste the code!
+        await new Promise((resolve) => setTimeout(resolve, 2000));
+      } catch (e) {
+        console.warn(e);
+      } finally {
+        // Tell the application to render
+        setAppIsReady(true);
+      }
+    }
+
+    prepare();
+  }, []);
+
+  const onLayoutRootView = useCallback(async () => {
+    if (appIsReady) {
+      // This tells the splash screen to hide immediately! If we call this after
+      // `setAppIsReady`, then we may see a blank screen while the app is
+      // loading its initial state and rendering its first pixels. So instead,
+      // we hide the splash screen once we know the root view has already
+      // performed layout.
+      await SplashScreen.hideAsync();
+    }
+  }, [appIsReady]);
+
+  if (!appIsReady) {
+    return null;
+  }
+
   return (
     <SafeAreaProvider>
-      <NavigationContainer>
-        <TabNavigator />
-      </NavigationContainer>
+        <NavigationContainer onReady={onLayoutRootView}>
+          <TabNavigator />
+        </NavigationContainer>
     </SafeAreaProvider>
   );
 };

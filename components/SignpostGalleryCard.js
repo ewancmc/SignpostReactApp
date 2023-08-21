@@ -47,16 +47,14 @@ const styles = StyleSheet.create({
     position: "absolute",
     backgroundColor: "rgba(0,0,0,0.53)",
     left: 0,
+    justifyContent: 'center',
+    alignItems: 'center'
   },
   loremIpsum: {
     color: "rgba(255,255,255,1)",
-    height: 40,
-    width: 40,
+    fontFamily: 'AvenirBold',
     fontSize: 30,
-    fontWeight: 'bold',
-    textAlign: "center",
-    marginTop: 6,
-    marginLeft: 5,
+    textAlign: 'center',
   },
 });
 

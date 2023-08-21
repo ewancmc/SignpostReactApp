@@ -27,8 +27,8 @@ function SignpostDetailsCard(props) {
         renderItem={({ item }) => (
           <View style={styles.cardBody2}>
             <View style={styles.bodyContent2}>
-              <Text>
-                <Text style={{ fontWeight: "bold" }}>
+              <Text style={{ fontFamily: "Avenir" }}>
+                <Text style={{ fontFamily: "AvenirBold" }}>
                   {props.signpost.id - 0}.{item.id + " "}
                 </Text>
                 {item.text}
@@ -77,13 +77,13 @@ const styles = StyleSheet.create({
   },
   subtitleStyle: {
     fontSize: 16,
-    fontWeight: "bold",
+    fontFamily: "AvenirBold",
     color: "#fff",
     lineHeight: 16,
   },
   subtitleStyle2: {
     fontSize: 16,
-    fontWeight: "bold",
+    fontFamily: "AvenirBold",
     color: "#000",
     lineHeight: 16,
   },
@@ -95,9 +95,9 @@ const styles = StyleSheet.create({
     height: 77,
     width: 80,
     fontSize: 40,
+    fontFamily: "AvenirBold",
     textAlign: "center",
     justifyContent: "center",
-    fontWeight: "bold",
   },
   rectStack: {
     left: 5,
