@@ -11,10 +11,12 @@ import * as SplashScreen from "expo-splash-screen";
 // Screens
 import FavouritesScreen from "./screens/FavouritesScreen";
 import AboutScreen from "./screens/AboutScreen";
-import SignpostList from "./components/SignpostList";
+import SignpostListScreen from "./screens/SignpostListScreen";
 import SignpostDetailsCardScreen from "./screens/SignpostDetailsCardScreen";
 import SignpostDetailsFullScreen from "./screens/SignpostDetailsFullScreen";
 import SignpostGalleryScreen from "./screens/SignpostGalleryScreen";
+import CalibrationSignpostScreen from "./screens/CalibrationSignpostScreen";
+import CalibrationDetailsScreen from "./screens/CalibrationDetailsScreen";
 
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
@@ -71,6 +73,19 @@ function TabNavigator() {
         }}
       />
       <Tab.Screen
+        name="Calibration"
+        component={CalibrationDetailsScreen}
+        options={{
+          tabBarLabel: "Calibration",
+          unmountOnBlur: true,
+          tabBarIcon: ({ focused, color, size }) => {
+            let iconName;
+            iconName = focused ? "play" : "play-outline";
+            return <Ionicons name={iconName} color={color} size={size} />;
+          },
+        }}
+      />
+      <Tab.Screen
         name="About"
         component={AboutScreen}
         options={{
@@ -92,7 +107,7 @@ function ListStackNavigator() {
       screenOptions={{ headerShown: false }}
       initialRouteName="SignpostList"
     >
-      <Stack.Screen name="SignpostList" component={SignpostList} />
+      <Stack.Screen name="SignpostList" component={SignpostListScreen} />
       <Stack.Screen
         name="SignpostDetails"
         component={SignpostDetailsCardScreen}
@@ -100,6 +115,10 @@ function ListStackNavigator() {
       <Stack.Screen
         name="SignpostDetailsFull"
         component={SignpostDetailsFullScreen}
+      />
+      <Stack.Screen
+        name="CalibrationSignpost"
+        component={CalibrationSignpostScreen}
       />
     </Stack.Navigator>
   );
@@ -119,6 +138,10 @@ function GalleryStackNavigator() {
       <Stack.Screen
         name="SignpostDetailsFull"
         component={SignpostDetailsFullScreen}
+      />
+      <Stack.Screen
+        name="CalibrationSignpost"
+        component={CalibrationSignpostScreen}
       />
     </Stack.Navigator>
   );
@@ -141,6 +164,10 @@ function FavouriteStackNavigator() {
         name="SignpostDetailsFull"
         component={SignpostDetailsFullScreen}
       />
+      <Stack.Screen
+        name="CalibrationSignpost"
+        component={CalibrationSignpostScreen}
+      />
     </Stack.Navigator>
   );
 }
@@ -155,11 +182,8 @@ const App = () => {
       try {
         await Font.loadAsync({
           Avenir: require("./assets/fonts/AvenirNextLTProRegular.otf"),
-          AvenirBold: require("./assets/fonts/AvenirNextLTProBold.otf")
+          AvenirBold: require("./assets/fonts/AvenirNextLTProBold.otf"),
         });
-        // Artificially delay for two seconds to simulate a slow loading
-        // experience. Please remove this if you copy and paste the code!
-        await new Promise((resolve) => setTimeout(resolve, 2000));
       } catch (e) {
         console.warn(e);
       } finally {
@@ -188,9 +212,9 @@ const App = () => {
 
   return (
     <SafeAreaProvider>
-        <NavigationContainer onReady={onLayoutRootView}>
-          <TabNavigator />
-        </NavigationContainer>
+      <NavigationContainer onReady={onLayoutRootView}>
+        <TabNavigator />
+      </NavigationContainer>
     </SafeAreaProvider>
   );
 };

@@ -4,40 +4,38 @@ import { FlatList, StyleSheet, View, Text } from "react-native";
 function SignpostDetailsCard(props) {
   const bodyText = props.signpost.body_text;
   return (
-    <View style={[styles.container, { height: props.windowHeight }]}>
-      <View style={styles.cardBody}>
+      <View style={[styles.container]}>
         <View style={styles.bodyContent}>
-          <Text style={styles.subtitleStyle}>{props.signpost.title}</Text>
-        </View>
-      </View>
-      <View style={styles.rectStack}>
-        <Text style={styles.loremIpsum}>{props.signpost.id}</Text>
-      </View>
-      <View style={styles.cardBody2}>
-        <View style={styles.bodyContent2}>
-          <Text style={styles.subtitleStyle2}>
-            Key Chapters: {props.signpost.key_chapters}
-          </Text>
-        </View>
-      </View>
-
-      <FlatList
-        data={bodyText}
-        keyExtractor={({ id }) => id.toString()}
-        renderItem={({ item }) => (
-          <View style={styles.cardBody2}>
-            <View style={styles.bodyContent2}>
-              <Text style={{ fontFamily: "Avenir" }}>
-                <Text style={{ fontFamily: "AvenirBold" }}>
-                  {props.signpost.id - 0}.{item.id + " "}
-                </Text>
-                {item.text}
-              </Text>
-            </View>
+          <View style={styles.titleRow}>
+            <Text style={styles.loremIpsum}>{props.signpost.id}</Text>
+            <Text style={styles.subtitleStyle}>{props.signpost.title}</Text>
           </View>
-        )}
-      />
-    </View>
+        </View>
+        <View style={styles.cardBody2}>
+          <View style={styles.bodyContent2}>
+            <Text style={styles.subtitleStyle2}>
+              Key Chapters: {props.signpost.key_chapters}
+            </Text>
+          </View>
+        </View>
+
+        <FlatList
+          data={bodyText}
+          keyExtractor={({ id }) => id.toString()}
+          renderItem={({ item }) => (
+            <View style={styles.cardBody2}>
+              <View style={styles.bodyContent2}>
+                <Text style={{ fontFamily: "Avenir" }}>
+                  <Text style={{ fontFamily: "AvenirBold" }}>
+                    {props.signpost.id - 0}.{item.id + " "}
+                  </Text>
+                  {item.text}
+                </Text>
+              </View>
+            </View>
+          )}
+        />
+      </View>
   );
 }
 
@@ -63,8 +61,13 @@ const styles = StyleSheet.create({
   },
   bodyContent: {
     padding: 20,
-    flex: 1,
-    justifyContent: "center",
+  },
+  titleRow: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems:"center",
+    paddingBottom: 5,
+    width:280,
   },
   bodyContent2: {
     paddingLeft: 20,
@@ -76,6 +79,8 @@ const styles = StyleSheet.create({
     borderBottomWidth: 2,
   },
   subtitleStyle: {
+    padding: 5,
+    paddingRight: 20,
     fontSize: 16,
     fontFamily: "AvenirBold",
     color: "#fff",
@@ -88,13 +93,9 @@ const styles = StyleSheet.create({
     lineHeight: 16,
   },
   loremIpsum: {
-    top: 10,
-    left: 0,
-    position: "absolute",
     color: "#fff",
-    height: 77,
-    width: 80,
     fontSize: 40,
+    paddingRight:10,
     fontFamily: "AvenirBold",
     textAlign: "center",
     justifyContent: "center",

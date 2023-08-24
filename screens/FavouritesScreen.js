@@ -48,7 +48,7 @@ const FavouritesScreen = ({ navigation }) => {
               paddingTop: insets.top,
             }}
           >
-            <Text style={{ fontSize: 26, fontWeight: "bold" }}>
+            <Text style={{ fontSize: 26, fontFamily:'AvenirBold' }}>
               Add a favourite
             </Text>
           </View>

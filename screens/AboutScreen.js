@@ -5,66 +5,92 @@ import {
   SafeAreaProvider,
   useSafeAreaInsets,
 } from "react-native-safe-area-context";
+import {
+  GestureHandlerRootView,
+  ScrollView,
+} from "react-native-gesture-handler";
 
 export default function AboutScreen({ navigation }) {
   const insets = useSafeAreaInsets();
 
   return (
     <SafeAreaProvider>
-      <View
-        style={{
-          flex: 1,
-          alignItems: "center",
-          justifyContent: "center",
-          flexDirection: "column",
-          paddingTop: insets.top,
-        }}
-      >
-        <Text style={styles.textItem}>
-          This app is based on the book The Pilgrim’s Guide to the Workplace by
-          Dr. Agustin Chevez.
-        </Text>
-        <Text style={styles.textItem}>
-          It’s not necessary to read the book to use this app, but you will get
-          much more out of the Signposts, and understand the illustrations
-          better, if you do so.
-        </Text>
-        <Text style={styles.textItem}>
-          This book is Open Access and can be downloaded for free. Reading not
-          your thing? There is also an audiobook version.
-        </Text>
-        <Text style={{ padding: 5 }}>More about the book here:</Text>
-        <Image
-          style={styles.image}
-          source={require("../assets/book_cover.png")}
-        />
-        <View style={styles.footerContainer}>
-          <Text style={styles.textFooter}>
-            Images created by Midjourney from prompts by the author.
-          </Text>
-          <Text style={styles.textFooter}>
-            This app has been developed by Ewan Clarke-McIntyre.
-          </Text>
-          <Text style={styles.textFooter}>All rights reserved 2023 ©</Text>
-        </View>
-      </View>
+      <GestureHandlerRootView>
+        <ScrollView>
+          <View
+            style={{
+              flex: 1,
+              alignItems: "center",
+              justifyContent: "center",
+              flexDirection: "column",
+              justifyContent: "space-between",
+              paddingTop: insets.top,
+            }}
+          >
+            <View style={styles.topContainer}>
+              <Text style={styles.textItem}>
+                This app is based on the book The Pilgrim’s Guide to the
+                Workplace by Dr. Agustin Chevez.
+              </Text>
+              <Text style={styles.textItem}>
+                It’s not necessary to read the book to use this app, but you
+                will get much more out of the Signposts, and understand the
+                illustrations better, if you do so.
+              </Text>
+              <Text style={styles.textItem}>
+                This book is Open Access and can be downloaded for free. Reading
+                not your thing? There is also an audiobook version.
+              </Text>
+            </View>
+            <View style={styles.bookContainer}>
+              <Text style={styles.bookText}>More about the book here:</Text>
+              <Image
+                style={styles.image}
+                source={require("../assets/book_cover.png")}
+              />
+            </View>
+            <View style={styles.footerContainer}>
+              <Text style={styles.textFooter}>
+                Images created by Midjourney from prompts by the author.
+              </Text>
+              <Text style={styles.textFooter}>
+                This app has been developed by Ewan Clarke-McIntyre.
+              </Text>
+              <Text style={styles.textFooter}>All rights reserved 2023 ©</Text>
+            </View>
+          </View>
+        </ScrollView>
+      </GestureHandlerRootView>
     </SafeAreaProvider>
   );
 }
 
 const styles = StyleSheet.create({
+  topContainer: {
+    paddingTop: 20,
+    paddingBottom: 20
+  },
+  bookContainer: { alignItems: "center" },
   textItem: {
     width: 350,
-    padding: 10,
-    textAlign: "auto",
-    fontFamily: 'Avenir',
+    padding: 5,
+    paddingLeft: 20,
+    paddingRight: 20,
+    fontSize: 20,
+    fontFamily: "Avenir",
+  },
+  bookText: {
+    fontFamily: "Avenir",
+    fontSize: 15,
+    padding: 5,
+    opacity: 0.6,
   },
   image: {
     aspectRatio: 0.608,
     height: 200,
   },
   footerContainer: {
-    padding:30,
+    padding: 30,
     justifyContent: "flex-end",
   },
   textFooter: {

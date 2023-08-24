@@ -17,16 +17,15 @@ const SignpostDetailsFullScreen = ({ route, navigation }) => {
   const { item } = route.params;
 
   function onSwipeLeft() {
-    navigateFullDetails();
+    navigateCalibration();
   }
 
   function onSwipeRight() {
     navigateGoBack();
   }
-  function navigateFullDetails() {
-    navigation.navigate("SignpostDetailsFull", {
+  function navigateCalibration() {
+    navigation.navigate("CalibrationSignpost", {
       item: item,
-      height: windowheight,
     });
   }
 

@@ -148,7 +148,6 @@ const styles = StyleSheet.create({
   icon: {
     color: "rgba(0,0,0,1)",
     fontSize: 40,
-    //paddingTop: 5,
   },
 });
 

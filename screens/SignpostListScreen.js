@@ -1,12 +1,12 @@
 import { View, FlatList, TouchableOpacity } from "react-native";
-import SignpostCard from "./SignpostCard";
+import SignpostCard from "../components/SignpostCard";
 import SignpostData from "../data/signpost_data";
 import {
   SafeAreaProvider,
   useSafeAreaInsets,
 } from "react-native-safe-area-context";
 
-const SignpostList = ({ navigation }) => {
+const SignpostListScreen = ({ navigation }) => {
   const insets = useSafeAreaInsets();
   return (
     <SafeAreaProvider>
@@ -33,4 +33,4 @@ const SignpostList = ({ navigation }) => {
   );
 };
 
-export default SignpostList;
+export default SignpostListScreen;
