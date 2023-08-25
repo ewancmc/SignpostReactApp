@@ -1,6 +1,6 @@
 import React from "react";
 import { StyleSheet, View, Text, Image, Pressable } from "react-native";
-import { imageSelect } from "../images/imageSelect";
+import { RadioButton } from "react-native-paper";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import {
@@ -15,6 +15,7 @@ import {
 
 const CalibrationSignpostScreen = ({ route, navigation }) => {
   const { onTouchStart, onTouchEnd } = useSwipe(onSwipeLeft, onSwipeRight, 6);
+  const [value, setValue] = React.useState();
   const insets = useSafeAreaInsets();
   const { item } = route.params;
 
@@ -35,6 +36,57 @@ const CalibrationSignpostScreen = ({ route, navigation }) => {
     navigation.goBack();
   }
 
+  //init radio button state
+  getCalibration = async (key) => {
+    try {
+      response = await AsyncStorage.getItem("calibration");
+      if (response !== null) {
+        const parsed = JSON.parse(response)
+        if (response.includes(key)){
+          for (var i = 0; i < parsed.length; ++i) {
+            if (parsed[i]["id"] === key) {
+              setValue(parsed[i]["calibration"]);
+            }
+          }
+        }
+      }
+    } catch (e) {}
+  };
+  getCalibration(item.id);
+
+  //updates calibration values in async data
+  asyncSet = async (calibrationValue) => {
+    setValue(calibrationValue);
+    try {
+      response = await AsyncStorage.getItem("calibration");
+      if (response == null) {
+        const value = { id: item.id, calibration: calibrationValue };
+        const valueList = [];
+        valueList.push(value);
+        console.log(valueList);
+        await AsyncStorage.setItem("calibration", JSON.stringify(valueList));
+      } else {
+        parsed = JSON.parse(response);
+        if (response.includes(item.id)) {
+          for (var i = 0; i < parsed.length; ++i) {
+            if (parsed[i]["id"] === item.id) {
+              parsed[i]["calibration"] = calibrationValue;
+              console.log(parsed);
+            }
+          }
+          await AsyncStorage.setItem("calibration", JSON.stringify(parsed));
+        } else {
+          const value = { id: item.id, calibration: calibrationValue };
+          parsed.push(value);
+          console.log(parsed);
+          await AsyncStorage.setItem("calibration", JSON.stringify(parsed));
+        }
+      }
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
   return (
     <SafeAreaProvider onTouchStart={onTouchStart} onTouchEnd={onTouchEnd}>
       <View style={[styles.container, { paddingTop: insets.top }]}>
@@ -44,8 +96,28 @@ const CalibrationSignpostScreen = ({ route, navigation }) => {
             <Text style={styles.subtitleStyle}>{item.title}</Text>
           </View>
         </View>
-        <View></View>
       </View>
+      <RadioButton.Group
+        onValueChange={(newValue) => asyncSet(newValue)}
+        value={value}
+      >
+        <View style={styles.titleRow}>
+          <Text>GO THERE</Text>
+          <RadioButton value="1" />
+        </View>
+        <View style={styles.titleRow}>
+          <Text>HEAD THAT WAY, BUT NOT THERE</Text>
+          <RadioButton value="2" />
+        </View>
+        <View style={styles.titleRow}>
+          <Text>IGNORE IT</Text>
+          <RadioButton value="3" />
+        </View>
+        <View style={styles.titleRow}>
+          <Text>GO IN THE OPPOSITE DIRECTION</Text>
+          <RadioButton value="4" />
+        </View>
+      </RadioButton.Group>
     </SafeAreaProvider>
   );
 };

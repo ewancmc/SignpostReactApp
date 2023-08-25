@@ -1,6 +1,7 @@
 import * as React from "react";
 import { View, Text, FlatList, TouchableOpacity } from "react-native";
 import SignpostCard from "../components/SignpostCard";
+import SignpostData from "../data/signpost_data";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { useIsFocused } from "@react-navigation/native";
 import {
@@ -20,16 +21,22 @@ const FavouritesScreen = ({ navigation }) => {
 
   //gets favourite list
   const getFavourites = async () => {
-    //gets all keys in async storage
     try {
-      const itemsList = [];
-      const keys = await AsyncStorage.getAllKeys();
-      const items = await AsyncStorage.multiGet(keys);
-      for (i in items) {
-        itemsList.push(JSON.parse(items[i][1]));
+      let itemsList = [];
+      if ((await AsyncStorage.getItem("favouriteID")) === null) {
+      } else {
+        const items = await AsyncStorage.getItem("favouriteID");
+        itemsParsed = JSON.parse(items);
+        filterBy = {id: itemsParsed}
+        itemsList = SignpostData.filter(function (o) {
+          return Object.keys(filterBy).every(function (k) {
+            return filterBy[k].some(function (f) {
+              return o[k] === f;
+            });
+          });
+        });
+        setFavouritesIDList(itemsList);
       }
-      setFavouritesIDList(itemsList);
-      return items;
     } catch (error) {
       console.log(error, "problemo");
     }
@@ -37,24 +44,7 @@ const FavouritesScreen = ({ navigation }) => {
   getFavourites();
 
   if (isFocussed) {
-    if (favouritesIDList.length == 0) {
-      return (
-        <SafeAreaProvider>
-          <View
-            style={{
-              flex: 1,
-              alignItems: "center",
-              justifyContent: "center",
-              paddingTop: insets.top,
-            }}
-          >
-            <Text style={{ fontSize: 26, fontFamily:'AvenirBold' }}>
-              Add a favourite
-            </Text>
-          </View>
-        </SafeAreaProvider>
-      );
-    } else {
+    if (favouritesIDList.length > 0) {
       return (
         <SafeAreaProvider>
           <View style={{ paddingTop: insets.top }}>
@@ -80,9 +70,26 @@ const FavouritesScreen = ({ navigation }) => {
           </View>
         </SafeAreaProvider>
       );
+    } else {
+      return (
+        <SafeAreaProvider>
+          <View
+            style={{
+              flex: 1,
+              alignItems: "center",
+              justifyContent: "center",
+              paddingTop: insets.top,
+            }}
+          >
+            <Text style={{ fontSize: 26, fontFamily: "AvenirBold" }}>
+              Add a favourite
+            </Text>
+          </View>
+        </SafeAreaProvider>
+      );
     }
   } else {
-    return (null)
+    return null;
   }
 };
 

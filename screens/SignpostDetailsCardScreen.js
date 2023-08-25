@@ -39,11 +39,23 @@ const SignpostDetailsCardScreen = ({ route, navigation }) => {
   // initialise favourite state
   checkFavourite = async (key) => {
     try {
-      const status = await AsyncStorage.getItem(key);
-      if (status == null) {
+      response = await AsyncStorage.getItem("favouriteID");
+      if (response == null) {
         setFavouriteIcon(false);
+        //setFavouriteIds(response);
+        console.log("null");
       } else {
-        setFavouriteIcon(true);
+        const parsed = JSON.parse(response);
+        if (parsed.includes(key)) {
+          setFavouriteIcon(true);
+          //setFavouriteIds(parsed);
+          console.log("id exists");
+          console.log(parsed);
+        } else {
+          setFavouriteIcon(false);
+          //setFavouriteIds(parsed);
+          console.log("id doesn't exist");
+        }
       }
     } catch (e) {
       // read error
@@ -51,19 +63,33 @@ const SignpostDetailsCardScreen = ({ route, navigation }) => {
   };
   checkFavourite(item.id);
 
-  toggleFavourite = async (key, value) => {
-    if (favouriteIcon) {
+  toggleFavourite = async (key) => {
+    if (favouriteIcon === false) {
       try {
-        await AsyncStorage.removeItem(key);
+        response = await AsyncStorage.getItem("favouriteID");
+        if (response === null) {
+          parsed = [];
+          parsed.push(key);
+          await AsyncStorage.setItem("favouriteID", JSON.stringify(parsed));
+          setFavouriteIcon(!favouriteIcon);
+        } else {
+          const parsed = JSON.parse(response);
+          parsed.push(key);
+          await AsyncStorage.setItem("favouriteID", JSON.stringify(parsed));
+          setFavouriteIcon(!favouriteIcon);
+        }
       } catch (e) {
         // remove error
       }
     } else {
       try {
-        const jsonValue = JSON.stringify(value);
-        await AsyncStorage.setItem(key, jsonValue);
+        response = await AsyncStorage.getItem("favouriteID");
+        const parsed = JSON.parse(response);
+        parsedNew = parsed.filter(function(e) {return e !== key})
+        await AsyncStorage.setItem("favouriteID", JSON.stringify(parsedNew));
+        setFavouriteIcon(!favouriteIcon);
       } catch (e) {
-        // save error
+        // remove error
       }
     }
   };
@@ -82,8 +108,7 @@ const SignpostDetailsCardScreen = ({ route, navigation }) => {
                 <Text style={styles.titleStyle}>Signpost {item.id}</Text>
                 <Pressable
                   onPress={() => {
-                    toggleFavourite(item.id, item);
-                    setFavouriteIcon(!favouriteIcon);
+                    toggleFavourite(item.id);
                   }}
                 >
                   <Ionicons

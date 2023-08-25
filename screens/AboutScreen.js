@@ -1,5 +1,5 @@
-import * as React from "react";
-import { View, Text, StyleSheet, Image } from "react-native";
+import React from "react";
+import { View, Text, StyleSheet, Image, Button } from "react-native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import {
   SafeAreaProvider,
@@ -12,6 +12,16 @@ import {
 
 export default function AboutScreen({ navigation }) {
   const insets = useSafeAreaInsets();
+
+  clearAll = async () => {
+    try {
+      await AsyncStorage.clear();
+    } catch (e) {
+      // clear error
+    }
+
+    console.log("Done.");
+  };
 
   return (
     <SafeAreaProvider>
@@ -49,6 +59,11 @@ export default function AboutScreen({ navigation }) {
                 source={require("../assets/book_cover.png")}
               />
             </View>
+            <Button
+              title="Clear async storage"
+              onPress={() => clearAll()}
+              style={{ fontSize: 26, fontWeight: "bold" }}
+            />
             <View style={styles.footerContainer}>
               <Text style={styles.textFooter}>
                 Images created by Midjourney from prompts by the author.
@@ -68,7 +83,7 @@ export default function AboutScreen({ navigation }) {
 const styles = StyleSheet.create({
   topContainer: {
     paddingTop: 20,
-    paddingBottom: 20
+    paddingBottom: 20,
   },
   bookContainer: { alignItems: "center" },
   textItem: {
