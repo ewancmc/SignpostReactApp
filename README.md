@@ -2,7 +2,7 @@
 # The Pilgrim’s Guide to the Workplace
 
 <p align="center">
-  <img width="460" height="300" src="[https://picsum.photos/460/300](https://i.ibb.co/6vJPmBC/Signpost-React-App-Mockup.png)">
+  <img width="600" src="https://i.ibb.co/6vJPmBC/Signpost-React-App-Mockup.png">
 </p>
 
 This mobile application serves as a companion app for Dr Agustin Chevez's book, "The Pilgrim’s Guide to the Workplace". 
