@@ -1,6 +1,8 @@
 
 # The Pilgrim’s Guide to the Workplace
 
+("https://i.ibb.co/6vJPmBC/Signpost-React-App-Mockup.png")
+
 This mobile application serves as a companion app for Dr Agustin Chevez's book, "The Pilgrim’s Guide to the Workplace". 
 
 It’s not necessary to read the book to use this app, but you will get much more out of the Signposts, and understand the illustrations better, if you do so.
