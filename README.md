@@ -36,6 +36,7 @@ Start expo and run app
 ## Acknowledgements
 
  - Images created by Midjourney from prompts by the author
+ - Mockups by rawpixel.com on Freepik
 
 
 ## License
