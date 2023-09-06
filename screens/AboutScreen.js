@@ -1,5 +1,13 @@
 import React from "react";
-import { View, Text, StyleSheet, Image, Button } from "react-native";
+import {
+  View,
+  Text,
+  StyleSheet,
+  Image,
+  Button,
+  Linking,
+  Pressable,
+} from "react-native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import {
   SafeAreaProvider,
@@ -9,6 +17,7 @@ import {
   GestureHandlerRootView,
   ScrollView,
 } from "react-native-gesture-handler";
+import { Link } from "@react-navigation/native";
 
 export default function AboutScreen({ navigation }) {
   const insets = useSafeAreaInsets();
@@ -54,10 +63,18 @@ export default function AboutScreen({ navigation }) {
             </View>
             <View style={styles.bookContainer}>
               <Text style={styles.bookText}>More about the book here:</Text>
-              <Image
-                style={styles.image}
-                source={require("../assets/book_cover.png")}
-              />
+              <Pressable
+                onPress={() => {
+                  Linking.openURL(
+                    "https://www.achevez.com/the-pilgrim-s-guide-to-the-workplace"
+                  );
+                }}
+              >
+                <Image
+                  style={styles.image}
+                  source={require("../assets/book_cover.png")}
+                />
+              </Pressable>
             </View>
             <Button
               title="Clear async storage"

@@ -187,7 +187,7 @@ const styles = StyleSheet.create({
   subtitleStyle: {
     flex: 4 / 5,
     padding: 5,
-    fontSize: 16,
+    fontSize: RFValue(16),
     fontFamily: "AvenirBold",
     color: "#fff",
     lineHeight: 18,
@@ -208,7 +208,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
   },
   radioButton: {
-    backgroundColor: "#BFBFBF",
+    backgroundColor: "#dbdbdb",
     flexGrow: 1 / 4,
     flexDirection: "row",
     alignItems: "center",
@@ -229,12 +229,12 @@ const styles = StyleSheet.create({
   },
   calibrationTitle: {
     fontFamily: "AvenirBold",
-    fontSize: RFValue(18),
+    fontSize: RFValue(17),
     paddingBottom: 2
   },
   calibrationBody: {
     fontFamily: "Avenir",
-    fontSize: RFValue(14),
+    fontSize: RFValue(15),
   },
 });
 

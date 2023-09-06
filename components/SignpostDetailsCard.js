@@ -25,7 +25,7 @@ function SignpostDetailsCard(props) {
           renderItem={({ item }) => (
             <View style={styles.cardBody2}>
               <View style={styles.bodyContent2}>
-                <Text style={{ fontFamily: "Avenir" }}>
+                <Text style={{ fontFamily: "Avenir", fontSize: 16 }}>
                   <Text style={{ fontFamily: "AvenirBold" }}>
                     {props.signpost.id - 0}.{item.id + " "}
                   </Text>
