@@ -22,6 +22,7 @@ import { Link } from "@react-navigation/native";
 export default function AboutScreen({ navigation }) {
   const insets = useSafeAreaInsets();
 
+  // clears async storage and resets user data on app 
   clearAll = async () => {
     try {
       await AsyncStorage.clear();

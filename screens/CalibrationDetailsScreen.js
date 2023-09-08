@@ -50,6 +50,7 @@ const CalibrationDetailsScreen = () => {
   };
   getCalibration();
 
+  // converts calbration details to a percentage
   function toPercentage(number, divisor) {
     if (number === 0) {
       return "0%";
